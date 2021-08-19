@@ -18,6 +18,8 @@ const computerScissor = document.getElementById('computerScissor');
 const computerLizard = document.getElementById('computerLizard');
 const computerSpock = document.getElementById('computerSpock');
 
+const resetBtn = document.querySelector('.reset-icon');
+
 const allGameIcons = document.querySelectorAll('.far');
 
 const choices = {
@@ -155,6 +157,15 @@ function select(playerChoice) {
 	}
 }
 window.select = select;
+
+// Event Listeners
+playerRock.addEventListener('click', () => select('rock'));
+playerPaper.addEventListener('click', () => select('paper'));
+playerScissors.addEventListener('click', () => select('scissors'));
+playerLizard.addEventListener('click', () => select('lizard'));
+playerSpock.addEventListener('click', () => select('spock'));
+
+resetBtn.addEventListener('click', () => resetAll());
 
 // On Load, set initial values
 resetAll();
